@@ -1,0 +1,12 @@
+import sys
+input = sys.stdin.readline
+
+N, K = map(int, input().split())
+coins = [int(input()) for _ in range(N)]
+count = 0
+
+for c in reversed(coins):
+    if K >= c:
+        count += K // c
+        K %= c
+print(count)
